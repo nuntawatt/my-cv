@@ -1,72 +1,126 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>My CV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      -webkit-text-size-adjust: 100%;
-      background: #0b0b0b;
-    }
-    header {
-      position: sticky; top: 0; z-index: 2;
-      padding: 10px 12px;
-      background: #111; color: #fff;
-      display: flex; gap: 8px; align-items: center; justify-content: space-between;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    header a {
-      text-decoration: none; padding: 8px 12px; border-radius: 8px;
-      background: #fff; color: #111; font-weight: 600;
-    }
-    .viewer {
-      position: fixed; inset: 48px 0 0 0;   /* leave space for header on small screens */
-    }
-    @media (min-width: 600px) {
-      .viewer { inset: 56px 0 0 0; }
-    }
-    iframe, object {
-      width: 100%; height: 100%; border: 0; background: #222;
-    }
-    .fallback {
-      display: none; place-items: center; color: #fff; height: 100%;
-      padding: 24px; text-align: center;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-    .fallback a { color: #fff; font-weight: 700; text-decoration: underline; }
-  </style>
-</head>
-<body>
-  <header>
-    <span>📄 Nuntawat – CV</span>
-    <span style="display:flex; gap:8px;">
-      <a href="cv.pdf" target="_blank" rel="noopener">Open in new tab</a>
-    </span>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <title>My CV</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta property="og:title" content="Nuntawat SaeHuam - CV" />
+    <meta property="og:description" content="Computer Science student, KKU" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        -webkit-text-size-adjust: 100%;
+        background: #0b0b0b;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 10px 12px;
+        background: #111;
+        color: #fff;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        justify-content: space-between;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        font-size: 14px;
+      }
+      header a {
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: #fff;
+        color: #111;
+        font-weight: 600;
+      }
+      .viewer {
+        position: fixed;
+        inset: 48px 0 0 0;
+        overflow: hidden;
+      }
+      @media (min-width: 600px) {
+        .viewer {
+          inset: 56px 0 0 0;
+        }
+      }
+      iframe,
+      object {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: #222;
+      }
+      .fallback {
+        display: none;
+        place-items: center;
+        color: #fff;
+        height: 100%;
+        padding: 24px;
+        text-align: center;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+      }
+      .fallback a {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>📄 Nuntawat - CV </span>
+      <span style="display: flex; gap: 8px">
+        <a href="CV-Nuntawat-Saehuam.pdf" target="_blank" rel="noopener"
+          >Open in new tab</a
+        >
+      </span>
+    </header>
 
-  <div class="viewer">
-    <!-- หลายเบราว์เซอร์รองรับ #zoom=page-width ให้พอดีกับจอ -->
-    <iframe src="cv.pdf#zoom=page-width" id="pdfFrame" title="CV"></iframe>
+    <div class="viewer">
+      <iframe
+        src="CV-Nuntawat-Saehuam.pdf#zoom=page-width"
+        id="pdfFrame"
+        title="CV"
+      ></iframe>
 
-    <!-- Fallback: หากฝังไม่ได้ จะแสดงบล็อกนี้ด้วย JS ข้างล่าง -->
-    <div class="fallback" id="fallback">
-      ไม่สามารถแสดง PDF แบบฝังได้ในเบราว์เซอร์นี้<br /><br />
-      ➜ ลองเปิดแท็บใหม่: <a href="cv.pdf" target="_blank" rel="noopener">cv.pdf</a><br />
-      หรือใช้ตัวดูเอกสาร: 
-      <a href="https://docs.google.com/gview?embedded=1&url=https://nuntawatt.github.io/my-cv/cv.pdf" target="_blank" rel="noopener">Google Viewer</a>
+      <div class="fallback" id="fallback">
+        <a href="CV-Nuntawat-Saehuam.pdf" target="_blank" rel="noopener"
+          >CV-Nuntawat-Saehuam.pdf</a
+        ><br />
+      </div>
     </div>
-  </div>
 
-  <script>
-    // ถ้า iframe โหลดล้มเหลว (เช่น in-app browser บางตัว) ให้โชว์ fallback
-    const iframe = document.getElementById('pdfFrame');
-    const fallback = document.getElementById('fallback');
-    let loaded = false;
-    iframe.addEventListener('load', () => { loaded = true; });
-    setTimeout(() => { if (!loaded) { iframe.style.display = 'none'; fallback.style.display = 'grid'; } }, 1500);
-  </script>
-</body>
+    <script>
+      const iframe = document.getElementById("pdfFrame");
+      const fallback = document.getElementById("fallback");
+      let loaded = false;
+      iframe.addEventListener("load", () => {
+        loaded = true;
+      });
+      setTimeout(() => {
+        if (!loaded) {
+          iframe.style.display = "none";
+          fallback.style.display = "grid";
+        }
+      }, 3000);
+    </script>
+  </body>
 </html>
