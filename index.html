@@ -45,16 +45,6 @@
         color: #111;
         font-weight: 600;
       }
-      .viewer {
-        position: fixed;
-        inset: 48px 0 0 0;
-        overflow: hidden;
-      }
-      @media (min-width: 600px) {
-        .viewer {
-          inset: 56px 0 0 0;
-        }
-      }
       iframe,
       object {
         width: 100%;
@@ -85,16 +75,7 @@
     </style>
   </head>
   <body>
-    <header>
-      <span>📄 Nuntawat - CV </span>
-      <span style="display: flex; gap: 8px">
-        <a href="CV-Nuntawat-Saehuam.pdf" target="_blank" rel="noopener"
-          >Open in new tab</a
-        >
-      </span>
-    </header>
 
-    <div class="viewer">
       <iframe
         src="CV-Nuntawat-Saehuam.pdf#zoom=page-width"
         id="pdfFrame"
