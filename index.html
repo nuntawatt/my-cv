@@ -12,42 +12,15 @@
     body {
       height: 100%;
       margin: 0;
+      overflow: hidden;
       -webkit-text-size-adjust: 100%;
       background: #0b0b0b;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      padding: 10px 12px;
-      background: #111;
-      color: #fff;
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      justify-content: space-between;
-      font-family:
-        system-ui,
-        -apple-system,
-        Segoe UI,
-        Roboto,
-        Arial,
-        sans-serif;
-      font-size: 14px;
-    }
-
-    header a {
-      text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: #fff;
-      color: #111;
-      font-weight: 600;
-    }
-
     iframe,
     object {
+      position: fixed;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: 0;
@@ -58,16 +31,11 @@
       display: none;
       place-items: center;
       color: #fff;
-      height: 100%;
+      position: fixed;
+      inset: 0;
       padding: 24px;
       text-align: center;
-      font-family:
-        system-ui,
-        -apple-system,
-        Segoe UI,
-        Roboto,
-        Arial,
-        sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
     .fallback a {
@@ -83,17 +51,15 @@
   <iframe src="CV-Nuntawat-Saehuam.pdf#zoom=page-width" id="pdfFrame" title="CV"></iframe>
 
   <div class="fallback" id="fallback">
-    <a href="CV-Nuntawat-Saehuam.pdf" target="_blank" rel="noopener">CV-Nuntawat-Saehuam.pdf</a><br />
-  </div>
+    ไม่สามารถแสดง PDF ได้<br /><br />
+    <a href="CV-Nuntawat-Saehuam.pdf" target="_blank" rel="noopener">เปิดในแท็บใหม่</a>
   </div>
 
   <script>
     const iframe = document.getElementById("pdfFrame");
     const fallback = document.getElementById("fallback");
     let loaded = false;
-    iframe.addEventListener("load", () => {
-      loaded = true;
-    });
+    iframe.addEventListener("load", () => { loaded = true; });
     setTimeout(() => {
       if (!loaded) {
         iframe.style.display = "none";
